@@ -1,14 +1,24 @@
-   Institution
-1          hey
-2         <NA>
-3         <NA>
-4         <NA>
-5         <NA>
-6         <NA>
-7         <NA>
-8         <NA>
-9         <NA>
-10        <NA>
-11        <NA>
-12        <NA>
-13        <NA>
+                programarea bachelors bachelors2 diff
+1   Agric. & Nat. Resources         0          0    0
+2     Arch. & Envtl. Design         0          0    0
+3              Area Studies        17          8    9
+4       Biological Sciences       493         72  421
+5     Business & Management         8          0    8
+6            Communications        74          0   74
+7     Computer & Info. Sci.       425        348   77
+8                 Education         1          0    1
+9               Engineering       202          8  194
+10      Fine & Applied Arts       163         67   96
+11        Foreign Languages        30         24    6
+12       Health Professions       125        140  -15
+13           Home Economics         0          0    0
+14 Interdisc. & CC Transfer        33         41   -8
+15                      Law         0          0    0
+16                  Letters        71         43   28
+17          Library Science         0          0    0
+18              Mathematics        81          9   72
+19         Physical Science        33         13   20
+20               Psychology       331         82  249
+21   Public Affairs & Serv.       123         51   72
+22          Social Sciences       362        198  164
+23                    Total     2,572      1,104 1468
