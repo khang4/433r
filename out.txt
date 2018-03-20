@@ -1,8 +1,6 @@
-# A tibble: 5 x 2
-  clean_test     n
-  <fct>      <int>
-1 dubious      142
-2 men          194
-3 notalk       514
-4 nowomen      141
-5 ok           803
+  clean_test   n
+1    dubious 142
+2        men 194
+3     notalk 514
+4    nowomen 141
+5         ok 803
