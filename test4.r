@@ -2,7 +2,7 @@ options(width=2000);
 
 document<-function(name)
 {
-    return(structure(list(m_name=name),class="document"));
+    return(structure(list(name=name),class="document"));
 }
 
 printname<-function(doc)
@@ -12,8 +12,11 @@ printname<-function(doc)
 
 printname.document<-function(doc)
 {
-    cat(sprintf("name is %s\n",doc[["m_name"]]));
+    cat(sprintf("name is %s\n",doc[["name"]]));
 }
 
 bob<-document("hey there");
+printname(bob);
+
+bob[["name"]]<-"nop";
 printname(bob);
