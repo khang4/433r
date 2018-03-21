@@ -2,7 +2,7 @@ library(dplyr,warn.conflicts=FALSE);
 library(ggplot2,warn.conflicts=FALSE);
 options(width=2000);
 
-failreasons<-function(alldata)
+bars<-function(alldata)
 {
     relevantdata<-data.frame(count(select(alldata,clean_test),clean_test));
     # colnames(relevantdata)<-c("dubious","men","notalk","nowomen","ok");
@@ -26,6 +26,19 @@ violin<-function(alldata)
 
     ggplot(data=relevantdata,aes(binary,code))+geom_violin();
     ggsave("graph2.png");
+}
+
+glowworms<-function(alldata)
+{
+    rdata<-select(alldata,budget_2013.,binary,code);
+    rdata$code<-as.numeric(gsub("PASS|FAIL","",rdata$code));
+    rdata$budget_2013.=strtoi(rdata$budget_2013.);
+    rdata$code=strtoi(rdata$code);
+
+    # print(rdata);
+
+    ggplot(data=rdata,aes(x=code,y=budget_2013.,color=binary))+geom_smooth();
+    ggsave("graph5.png");
 }
 
 scattuh<-function(alldata)
