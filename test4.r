@@ -20,3 +20,24 @@ printname(bob);
 
 bob[["name"]]<-"nop";
 printname(bob);
+
+bobosize<-10;
+bobo<-data.frame(matrix(ncol=1,nrow=bobosize));
+colnames(bobo)<-c("count");
+boboindex<-1;
+
+bobo[1,]<-1;
+rownames(bobo)[1]<-"hey";
+boboindex<-boboindex+1;
+
+addword<-"heya";
+if (!is.na(bobo[addword,]))
+{
+    bobo[addword,]<-bobo[addword,]+1;
+} else {
+    bobo[boboindex,]<-1;
+    rownames(bobo)[boboindex]<-addword;
+    boboindex<-boboindex+1;
+}
+
+print(bobo);
