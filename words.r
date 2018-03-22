@@ -28,10 +28,10 @@ addword.ddict<-function(dict,word)
 
     if (dict[["index"]]>=dict[["size"]])
     {
-        expanddict<-data.frame(matrix(ncol=1,nrow=dict[["increment"]]),row.names=c(dict$size+1:dict$size+dict$increment));
+        expanddict<-data.frame(matrix(ncol=1,nrow=dict[["increment"]]),row.names=c((dict$size+1):(dict$size+dict$increment)));
         colnames(expanddict)<-c("count");
         dict[["dictdata"]]<-rbind(dict[["dictdata"]],expanddict);
-        dict$size<-dict$size+dict[["increment"]];
+        dict$size<-dict$size+dict$increment;
     }
 
     return(dict);
@@ -50,7 +50,7 @@ sortdict.ddict<-function(dict)
     return(dict);
 }
 
-text<-scan("data/hounds.txt",character());
+text<-scan("data/hounds.txt",character(),quote=NULL);
 
 letters<-0;
 
