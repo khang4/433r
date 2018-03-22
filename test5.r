@@ -1,3 +1,12 @@
-bill<-data.frame(matrix(ncol=1,nrow=10),row.names=c(2:11));
-colnames(bill)<-"count";
+bill<-data.frame(count=integer());
+
+addword<-"hey";
+
+if (is.na(bill[addword,]))
+{
+    bill[addword,]<-1;
+} else {
+    bill[addword,]<-bill[addword,]+1;
+}
+
 print(bill);
