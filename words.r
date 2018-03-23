@@ -36,7 +36,7 @@ sortdict.ddict<-function(dict)
     return(dict);
 }
 
-text<-scan("data/hounds.txt",character(),quote=NULL);
+text<-scan("data/les_mis.txt",character(),quote=NULL,fileEncoding="UTF-8");
 
 letters<-0;
 
@@ -46,7 +46,8 @@ longestword<-"";
 wordcount<-ddict();
 
 invisible(lapply(text,function(word){
-    word<-gsub("[,.\"]","",word);
+    # word<-gsub("[,.\"]","",word);
+    # word<-gsub("[\"]","",word);
 
     letters<<-letters+nchar(word);
 
