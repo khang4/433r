@@ -15,5 +15,4 @@ wordcounts<-wordcounts[order(-wordcounts$count),,drop=FALSE];
 wordcounts<-cbind.data.frame(wordcounts,nchar(as.vector(wordcounts$word)));
 names(wordcounts)<-c("word","count","wordsize");
 
-
 print(wordcounts);
