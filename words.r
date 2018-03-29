@@ -36,8 +36,12 @@ sortdict.ddict<-function(dict)
     return(dict);
 }
 
-text<-scan("data/les_mis.txt",character(),quote=NULL,fileEncoding="UTF-8");
-print("hey");
+# text<-scan("data/victorious.txt",character(),quote=NULL,fileEncoding="UTF-8");
+# print(text);
+# print("hey");
+invisible(text<-strsplit(read_file("data/hounds.txt"),"\\s",perl=TRUE));
+text<-text[[1]];
+print(typeof(text));
 letters<-0;
 
 longestwordlen<-0;
@@ -45,7 +49,8 @@ longestword<-"";
 
 wordcount<-ddict();
 
-invisible(lapply(text,function(word){
+wordparse<-function(word)
+{
     # word<-gsub("[,.\"]","",word);
     # word<-gsub("[\"]","",word);
 
@@ -58,7 +63,9 @@ invisible(lapply(text,function(word){
     }
 
     wordcount<<-addword(wordcount,word);
-}));
+}
+
+invisible(lapply(text,wordparse));
 
 print(length(text));
 print(letters);
