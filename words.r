@@ -1,40 +1,40 @@
 library(readr,warn.conflicts=FALSE);
 options(width=2000);
 
-ddict<-function()
-{
-    dictdata<-data.frame(count=integer());
+# ddict<-function()
+# {
+#     dictdata<-data.frame(count=integer());
 
-    return(structure(list(
-        dictdata=dictdata
-    ),class="ddict"));
-}
+#     return(structure(list(
+#         dictdata=dictdata
+#     ),class="ddict"));
+# }
 
-addword<-function(dict,word){UseMethod("addword");}
-addword.ddict<-function(dict,word)
-{
-    if (is.na(dict$dictdata[word,]))
-    {
-        dict$dictdata[word,]<-1;
-    } else {
-        dict$dictdata[word,]<-dict$dictdata[word,]+1;
-    }
+# addword<-function(dict,word){UseMethod("addword");}
+# addword.ddict<-function(dict,word)
+# {
+#     if (is.na(dict$dictdata[word,]))
+#     {
+#         dict$dictdata[word,]<-1;
+#     } else {
+#         dict$dictdata[word,]<-dict$dictdata[word,]+1;
+#     }
 
-    return(dict);
-}
+#     return(dict);
+# }
 
-printdict<-function(dict){UseMethod("printdict");}
-printdict.ddict<-function(dict)
-{
-    print(dict$dictdata);
-}
+# printdict<-function(dict){UseMethod("printdict");}
+# printdict.ddict<-function(dict)
+# {
+#     print(dict$dictdata);
+# }
 
-sortdict<-function(dict){UseMethod("sortdict");}
-sortdict.ddict<-function(dict)
-{
-    dict$dictdata<-dict$dictdata[order(-dict$dictdata$count),,drop=FALSE];
-    return(dict);
-}
+# sortdict<-function(dict){UseMethod("sortdict");}
+# sortdict.ddict<-function(dict)
+# {
+#     dict$dictdata<-dict$dictdata[order(-dict$dictdata$count),,drop=FALSE];
+#     return(dict);
+# }
 
 # text<-tolower(scan("data/victorious.txt",character(),quote=NULL,fileEncoding="UTF-8"));
 invisible(text<-tolower(strsplit(read_file("data/victorious.txt"),"\\s",perl=TRUE)[[1]]));
