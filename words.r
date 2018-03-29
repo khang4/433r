@@ -36,40 +36,44 @@ sortdict.ddict<-function(dict)
     return(dict);
 }
 
-# text<-scan("data/victorious.txt",character(),quote=NULL,fileEncoding="UTF-8");
-# print(text);
-# print("hey");
-invisible(text<-strsplit(read_file("data/hounds.txt"),"\\s",perl=TRUE));
-text<-text[[1]];
-print(typeof(text));
-letters<-0;
+# text<-tolower(scan("data/victorious.txt",character(),quote=NULL,fileEncoding="UTF-8"));
+invisible(text<-tolower(strsplit(read_file("data/victorious.txt"),"\\s",perl=TRUE)[[1]]));
 
-longestwordlen<-0;
-longestword<-"";
 
-wordcount<-ddict();
+wordcounts<-table(unlist(text));
+wordcounts<-cbind.data.frame(names(wordcounts),strtoi(wordcounts));
+names(wordcounts)<-c("word","count");
+wordcounts<-wordcounts[order(-wordcounts$count),,drop=FALSE];
+print(wordcounts);
 
-wordparse<-function(word)
-{
-    # word<-gsub("[,.\"]","",word);
-    # word<-gsub("[\"]","",word);
+# letters<-0;
 
-    letters<<-letters+nchar(word);
+# longestwordlen<-0;
+# longestword<-"";
 
-    if (nchar(word)>longestwordlen)
-    {
-        longestwordlen<<-nchar(word);
-        longestword<<-word;
-    }
+# wordcount<-ddict();
 
-    wordcount<<-addword(wordcount,word);
-}
+# wordparse<-function(word)
+# {
+#     # word<-gsub("[,.\"]","",word);
+#     # word<-gsub("[\"]","",word);
 
-invisible(lapply(text,wordparse));
+#     letters<<-letters+nchar(word);
 
-print(length(text));
-print(letters);
-print(longestword);
+#     if (nchar(word)>longestwordlen)
+#     {
+#         longestwordlen<<-nchar(word);
+#         longestword<<-word;
+#     }
 
-wordcount<-sortdict(wordcount);
-printdict(wordcount);
+#     wordcount<<-addword(wordcount,word);
+# }
+
+# invisible(lapply(text,wordparse));
+
+# print(length(text));
+# print(letters);
+# print(longestword);
+
+# wordcount<-sortdict(wordcount);
+# printdict(wordcount);
