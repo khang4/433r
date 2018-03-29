@@ -37,7 +37,7 @@ sortdict.ddict<-function(dict)
 }
 
 text<-scan("data/les_mis.txt",character(),quote=NULL,fileEncoding="UTF-8");
-
+print("hey");
 letters<-0;
 
 longestwordlen<-0;
