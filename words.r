@@ -16,7 +16,7 @@ document<-function(filename)
     names(wordcounts)<-c("word","count","wordsize");
 
     maxwordsize<-max(wordsizes); #letter count of longest word
-    totalwords<-nrow(wordcounts); #total number of words
+    totalwords<-length(text); #total number of words
     averageletters=sum(wordsizes)/totalwords; #average letters per word
     longestword<-toString(filter(wordcounts,wordsize==maxwordsize)[1,][["word"]]); #the longest word
 
@@ -44,6 +44,6 @@ most_common.document<-function(doc,rows=5)
     print(doc$wordcounts[1:rows,]);
 }
 
-doc<-document("data/hey.txt");
+doc<-document("data/hounds.txt");
 summary(doc);
-most_common(doc,20);
+most_common(doc,10);
