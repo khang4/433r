@@ -17,16 +17,15 @@ document<-function(filename)
 
     maxwordsize<-max(wordsizes); #letter count of longest word
     totalwords<-length(text); #total number of words
-    averageletters=sum(wordsizes)/totalwords; #average letters per word
-    longestword<-toString(filter(wordcounts,wordsize==maxwordsize)[1,][["word"]]); #the longest word
 
     rownames(wordcounts)<-NULL;
 
     return(structure(list(
         wordcounts=wordcounts[c("word","count")],
-        longestword=longestword,
-        averageletters=averageletters,
-        totalwords=totalwords
+        longestword=toString(filter(wordcounts,wordsize==maxwordsize)[1,][["word"]]), #the longest word
+        averageletters=sum(wordsizes)/totalwords, #average letters per word
+        totalwords=totalwords,
+        previewwords=text[1:50]
     ),class="document"));
 }
 
@@ -41,9 +40,16 @@ summary.document<-function(doc)
 most_common<-function(doc,rows){UseMethod("most_common")}
 most_common.document<-function(doc,rows=5)
 {
-    print(doc$wordcounts[1:rows,]);
+    return(doc$wordcounts[1:rows,]);
 }
 
-doc<-document("data/hounds.txt");
+preview<-function(doc){UseMethod("preview")}
+preview.document<-function(doc)
+{
+    return(doc$previewwords);
+}
+
+doc<-document("data/victorious.txt");
 summary(doc);
 most_common(doc,10);
+preview(doc);

@@ -1,14 +1,15 @@
-word count: 62244
-average letters per word: 1.13562753036437
-longest word: http://www.gutenberg.org/3/0/7/3070/
+word count: 251
+average letters per word: 4.07171314741036
+longest word: Newcastle-Upon-Tyne
    word count
-1   the  3230
-2    of  1694
-3   and  1562
-4    to  1449
-5     a  1279
-6     I  1256
-7  that  1040
-8    in   908
-9   was   781
-10  you   663
+1   the    24
+2   and    14
+3    in     9
+4    of     9
+5    to     7
+6   was     6
+7   for     4
+8    at     3
+9   her     3
+10  new     3
+ [1] "HMS"                 "Victorious,"         "ordered"             "under"               "the"                 "1936"                "Naval"               "Programme,"          "was"                 "the"                 "third"               "Illustrious-class"   "aircraft"            "carrier"             "after"               "Illustrious"         "and"                 "Formidable."         "She"                 "was"                 "laid"                "down"                "at"                  "the"                 "Vickers-Armstrong"   "shipyard"            "at"                  "Newcastle-Upon-Tyne" "in"                  "1937"                "and"                 "launched"            "two"                 "years"               "later"               "in"                  "1939."               "Her"                 "commissioning"       "was"                 "delayed"             "until"               "1941"                "due"                 "to"                  "the"                 "greater"             "need"                "for"                 "escort"             
