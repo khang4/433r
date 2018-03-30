@@ -1,4 +1,7 @@
-[1] 1
+longest word length: 5
+total letters: 20
+total words: 5
+longest word: hello
    word count wordsize
 1   are     1        3
 2 hello     1        5
