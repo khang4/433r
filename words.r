@@ -4,8 +4,8 @@ options(width=2000);
 
 document<-function(filename)
 {
-    # text<-scan(filename,character(),quote=NULL,fileEncoding="UTF-8");
-    invisible(text<-strsplit(read_file(filename),"\\s",perl=TRUE)[[1]]);
+    text<-scan(filename,character(),quote=NULL,fileEncoding="UTF-8");
+    # invisible(text<-strsplit(read_file(filename),"\\s",perl=TRUE)[[1]]);
 
     wordcounts<-table(unlist(text));
     wordcounts<-cbind.data.frame(names(wordcounts),strtoi(wordcounts));

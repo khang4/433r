@@ -1,14 +1,14 @@
-word count: 71881
-average letters per word: 0.983375300844451
+word count: 62244
+average letters per word: 1.13562753036437
 longest word: http://www.gutenberg.org/3/0/7/3070/
    word count
-1        9637
-2   the  3230
-3    of  1694
-4   and  1562
-5    to  1449
-6     a  1279
-7     I  1256
-8  that  1040
-9    in   908
-10  was   781
+1   the  3230
+2    of  1694
+3   and  1562
+4    to  1449
+5     a  1279
+6     I  1256
+7  that  1040
+8    in   908
+9   was   781
+10  you   663
