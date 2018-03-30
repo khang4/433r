@@ -23,7 +23,7 @@ document<-function(filename)
     return(structure(list(
         wordcounts=wordcounts[c("word","count")],
         longestword=toString(filter(wordcounts,wordsize==maxwordsize)[1,][["word"]]), #the longest word
-        averageletters=sum(wordsizes)/totalwords, #average letters per word
+        averageletters=sum(wordcounts$count*wordcounts$wordsize)/totalwords, #average letters per word
         totalwords=totalwords,
         previewwords=text[1:50]
     ),class="document"));
@@ -49,7 +49,7 @@ preview.document<-function(doc)
     return(doc$previewwords);
 }
 
-doc<-document("data/victorious.txt");
+doc<-document("data/les_mis.txt");
 summary(doc);
 most_common(doc,10);
 preview(doc);
