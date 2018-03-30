@@ -2,22 +2,39 @@ library(readr,warn.conflicts=FALSE);
 library(dplyr,warn.conflicts=FALSE);
 options(width=2000);
 
-# text<-scan("data/victorious.txt",character(),quote=NULL,fileEncoding="UTF-8");
-invisible(text<-strsplit(read_file("data/hey.txt"),"\\s",perl=TRUE)[[1]]);
+document<-function(filename)
+{
+    # text<-scan(filename,character(),quote=NULL,fileEncoding="UTF-8");
+    invisible(text<-strsplit(read_file(filename),"\\s",perl=TRUE)[[1]]);
 
-wordcounts<-table(unlist(text));
-wordcounts<-cbind.data.frame(names(wordcounts),strtoi(wordcounts));
-names(wordcounts)<-c("word","count");
-wordcounts<-wordcounts[order(-wordcounts$count),,drop=FALSE];
-wordsizes<-nchar(as.vector(wordcounts$word));
-wordcounts<-cbind.data.frame(wordcounts,wordsizes);
-names(wordcounts)<-c("word","count","wordsize");
+    wordcounts<-table(unlist(text));
+    wordcounts<-cbind.data.frame(names(wordcounts),strtoi(wordcounts));
+    names(wordcounts)<-c("word","count");
+    wordcounts<-wordcounts[order(-wordcounts$count),,drop=FALSE];
+    wordsizes<-nchar(as.vector(wordcounts$word)); #array of all sizes of words
+    wordcounts<-cbind.data.frame(wordcounts,wordsizes); #table of word counts
+    names(wordcounts)<-c("word","count","wordsize");
 
-lettercount<-sum(wordsizes);
-maxwordsize<-max(wordsizes);
-cat(sprintf("longest word length: %s\n",maxwordsize));
-cat(sprintf("total letters: %s\n",lettercount));
-cat(sprintf("total words: %s\n",nrow(wordcounts)));
-cat(sprintf("longest word: %s\n",filter(wordcounts,wordsize==maxwordsize)[1,][["word"]]));
+    maxwordsize<-max(wordsizes); #letter count of longest word
+    totalwords<-nrow(wordcounts); #total number of words
+    averageletters=sum(wordsizes)/totalwords; #average letters per word
+    longestword<-toString(filter(wordcounts,wordsize==maxwordsize)[1,][["word"]]); #the longest word
 
-print(wordcounts);
+    return(structure(list(
+        wordcounts=wordcounts,
+        longestword=longestword,
+        averageletters=averageletters,
+        totalwords=totalwords
+    ),class="document"));
+}
+
+summary<-function(doc){UseMethod("summary")}
+summary.document<-function(doc)
+{
+    cat(sprintf("word count: %s\n",doc$totalwords));
+    cat(sprintf("average letters per word: %s\n",doc$averageletters));
+    cat(sprintf("longest word: %s\n",doc$longestword));
+}
+
+doc<-document("data/hey.txt");
+summary(doc);
