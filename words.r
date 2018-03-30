@@ -17,14 +17,16 @@ document<-function(filename)
 
     maxwordsize<-max(wordsizes); #letter count of longest word
     totalwords<-length(text); #total number of words
+    lettercount<-sum(wordcounts$count*wordcounts$wordsize); #total number of letters
 
     rownames(wordcounts)<-NULL;
 
     return(structure(list(
         wordcounts=wordcounts[c("word","count")],
         longestword=toString(filter(wordcounts,wordsize==maxwordsize)[1,][["word"]]), #the longest word
-        averageletters=sum(wordcounts$count*wordcounts$wordsize)/totalwords, #average letters per word
+        averageletters=lettercount/totalwords, #average letters per word
         totalwords=totalwords,
+        lettercount=lettercount,
         previewwords=text[1:50]
     ),class="document"));
 }
@@ -49,7 +51,51 @@ preview.document<-function(doc)
     return(doc$previewwords);
 }
 
-doc<-document("data/les_mis.txt");
-summary(doc);
-most_common(doc,10);
-preview(doc);
+corpus<-function(filepath)
+{
+    textfiles<-dir(filepath,pattern="\\.txt$",full.names=TRUE,recursive=TRUE);
+    docs<-lapply(textfiles,document);
+
+    maxwords<-0;
+    minwords<--1;
+    totalwords<-0;
+    totalletters<-0;
+    longestwordSize<-0;
+
+    lapply(docs,function(doc){
+        totalwords<<-totalwords+doc$totalwords;
+        totalletters<<-totalletters+doc$lettercount;
+        maxwords<<-max(maxwords,doc$totalwords);
+
+        if (minwords<0)
+        {
+            minwords<<-doc$totalwords;
+        } else {
+            minwords<<-min(minwords,doc$totalwords);
+        }
+
+        if (nchar(doc$longestword)>longestwordSize)
+        {
+            longestwordSize<<-nchar(doc$longestword);
+            longestword<<-doc$longestword;
+        }
+    });
+
+    print(longestword);
+
+    return(structure(list(
+        minwords=minwords,
+        maxwords=maxwords,
+        averageletters=totalletters/totalwords,
+        totalwords=totalwords,
+        averagewords=totalwords/length(textfiles),
+        longestword=longestword
+    ),class="corpus"));
+}
+
+# doc<-document("data/les_mis.txt");
+# summary(doc);
+# most_common(doc,10);
+# preview(doc);
+
+corp<-corpus("data/testdata");

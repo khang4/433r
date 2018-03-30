@@ -1,15 +1,1 @@
-word count: 568728
-average letters per word: 4.6851465023702
-longest word: "Police-agent-Ja-vert-was-found-drowned-un-der-a-boat-of-the-Pont-au-
-   word count
-1   the 36456
-2    of 19550
-3   and 13787
-4     a 13371
-5    to 13263
-6    in 10162
-7   was  8274
-8  that  6858
-9    he  6535
-10  his  6077
- [1] "The"          "Project"      "Gutenberg"    "EBook"        "of"           "Les"          "Mis?rables,"  "by"           "Victor"       "Hugo"         "This"         "eBook"        "is"           "for"          "the"          "use"          "of"           "anyone"       "anywhere"     "at"           "no"           "cost"         "and"          "with"         "almost"       "no"           "restrictions" "whatsoever."  "You"          "may"          "copy"         "it,"          "give"         "it"           "away"         "or"           "re-use"       "it"           "under"        "the"          "terms"        "of"           "the"          "Project"      "Gutenberg"    "License"      "included"     "with"         "this"         "eBook"       
+[1] "nosnesne???????????????????????????????????????????"
