@@ -93,6 +93,7 @@ corpus<-function(filepath)
     });
 
     allwordcounts<-allwordcounts[order(-allwordcounts$count),,drop=FALSE];
+    rownames(allwordcounts)<-NULL;
 
     return(structure(list(
         minwords=minwords,
@@ -113,10 +114,10 @@ summary.corpus<-function(corpse)
     cat(sprintf("min words in a document: %s\n",corpse$minwords));
     cat(sprintf("average letters per word: %s\n",corpse$averageletters));
     cat(sprintf("longest word in corpus: %s\n",corpse$longestword));
-    print(corpse$allwordcounts);
+    print(corpse$allwordcounts[1:20,]);
 }
 
-# doc<-document("data/les_mis.txt");
+# doc<-document("data/testdata/sherlocks_adventures.txt");
 # summary(doc);
 # most_common(doc,10);
 # preview(doc);

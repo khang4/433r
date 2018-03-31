@@ -1,20 +1,15 @@
-corpus total words: 17
-average words per document: 8.5
-max words in a document: 10
-min words in a document: 7
-average letters per word: 5.94117647058824
-longest word in corpus: nosnesne???????????????????????????????????????????
-                                                  word count
-8                                                    a     3
-3                                                hello     2
-6                                                 this     2
-1                                                   aa     1
-2                                                  are     1
-4                                                  how     1
-5                                                there     1
-7                                                 you.     1
-9                                                 aaaa     1
-10                                                  ho     1
-11 nosnesne???????????????????????????????????????????     1
-12                                                   w     1
-13                                               whats     1
+word count: 140
+average letters per word: 5.50714285714286
+longest word: www.gutenberg.org/license
+         word count
+1          OF     5
+2          of     4
+3          A.     3
+4  ADVENTURES     3
+5          at     3
+6          by     3
+7      HOLMES     3
+8    SHERLOCK     3
+9         the     3
+10        ***     2
+ [1] "Project"      "Gutenberg's"  "Adventures"   "of"           "Sherlock"     "Holmes,"      "by"           "A."           "Conan"        "Doyle"        "This"         "eBook"        "is"           "for"          "the"          "use"          "of"           "anyone"       "anywhere"     "at"           "no"           "cost"         "and"          "with"         "almost"       "no"           "restrictions" "whatsoever."  "You"          "may"          "copy"         "it,"          "give"         "it"           "away"         "or"           "re-use"       "it"           "under"        "the"          "terms"        "of"           "the"          "Project"      "Gutenberg"    "License"      "included"     "with"         "this"         "eBook"       
