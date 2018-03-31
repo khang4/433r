@@ -1,15 +1,15 @@
-word count: 140
-average letters per word: 5.50714285714286
-longest word: www.gutenberg.org/license
-         word count
-1          OF     5
-2          of     4
-3          A.     3
-4  ADVENTURES     3
-5          at     3
-6          by     3
-7      HOLMES     3
-8    SHERLOCK     3
-9         the     3
-10        ***     2
- [1] "Project"      "Gutenberg's"  "Adventures"   "of"           "Sherlock"     "Holmes,"      "by"           "A."           "Conan"        "Doyle"        "This"         "eBook"        "is"           "for"          "the"          "use"          "of"           "anyone"       "anywhere"     "at"           "no"           "cost"         "and"          "with"         "almost"       "no"           "restrictions" "whatsoever."  "You"          "may"          "copy"         "it,"          "give"         "it"           "away"         "or"           "re-use"       "it"           "under"        "the"          "terms"        "of"           "the"          "Project"      "Gutenberg"    "License"      "included"     "with"         "this"         "eBook"       
+word count: 1
+average letters per word: 1
+longest word: ?
+     word count
+1       ?     1
+NA   <NA>    NA
+NA.1 <NA>    NA
+NA.2 <NA>    NA
+NA.3 <NA>    NA
+NA.4 <NA>    NA
+NA.5 <NA>    NA
+NA.6 <NA>    NA
+NA.7 <NA>    NA
+NA.8 <NA>    NA
+ [1] "?" NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA 

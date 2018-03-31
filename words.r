@@ -117,10 +117,10 @@ summary.corpus<-function(corpse)
     print(corpse$allwordcounts[1:20,]);
 }
 
-# doc<-document("data/testdata/sherlocks_adventures.txt");
-# summary(doc);
-# most_common(doc,10);
-# preview(doc);
+doc<-document("data/testdata/sherlocks_adventures.txt");
+summary(doc);
+most_common(doc,10);
+preview(doc);
 
-corp<-corpus("data/testdata");
-summary(corp);
+# corp<-corpus("data/testdata");
+# summary(corp);
