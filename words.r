@@ -1,4 +1,5 @@
 library(readr,warn.conflicts=FALSE);
+library(plyr,warn.conflicts=FALSE);
 library(dplyr,warn.conflicts=FALSE);
 options(width=2000);
 
@@ -82,16 +83,16 @@ corpus<-function(filepath)
             longestword<<-doc$longestword;
         }
 
-        print(doc$wordcounts);
-
         if (!allwordunset)
         {
             allwordunset<<-TRUE;
             allwordcounts<<-doc$wordcounts;
         } else {
-            allwordcounts<<-bind_rows(allwordcounts,doc$wordcounts);
+            allwordcounts<<-ddply(rbind(allwordcounts,doc$wordcounts),"word",numcolwise(sum));
         }
     });
+
+    allwordcounts<-allwordcounts[order(-allwordcounts$count),,drop=FALSE];
 
     return(structure(list(
         minwords=minwords,
