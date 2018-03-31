@@ -1,6 +1,41 @@
-corpus total words: 266
-average words per document: 88.6666666666667
-max words in a document: 251
-min words in a document: 6
-average letters per word: 5.21052631578947
+[1] "integer"
+[1] "integer"
+   word count
+1    aa     1
+2   are     1
+3 hello     1
+4   how     1
+5 there     1
+6  this     1
+7  you.     1
+                                                 word count
+1                                                   a     3
+2                                                  aa     1
+3                                                aaaa     1
+4                                                  ho     1
+5 nosnesne???????????????????????????????????????????     1
+6                                                this     1
+7                                                   w     1
+8                                               whats     1
+corpus total words: 17
+average words per document: 8.5
+max words in a document: 10
+min words in a document: 7
+average letters per word: 5.76470588235294
 longest word in corpus: nosnesne???????????????????????????????????????????
+                                                  word count
+1                                                   aa     1
+2                                                  are     1
+3                                                hello     1
+4                                                  how     1
+5                                                there     1
+6                                                 this     1
+7                                                 you.     1
+8                                                    a     3
+9                                                   aa     1
+10                                                aaaa     1
+11                                                  ho     1
+12 nosnesne???????????????????????????????????????????     1
+13                                                this     1
+14                                                   w     1
+15                                               whats     1

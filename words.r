@@ -61,6 +61,8 @@ corpus<-function(filepath)
     totalwords<-0;
     totalletters<-0;
     longestwordSize<-0;
+    allwordunset=FALSE;
+    allwordcounts<-NULL;
 
     lapply(docs,function(doc){
         totalwords<<-totalwords+doc$totalwords;
@@ -79,6 +81,16 @@ corpus<-function(filepath)
             longestwordSize<<-nchar(doc$longestword);
             longestword<<-doc$longestword;
         }
+
+        print(doc$wordcounts);
+
+        if (!allwordunset)
+        {
+            allwordunset<<-TRUE;
+            allwordcounts<<-doc$wordcounts;
+        } else {
+            allwordcounts<<-bind_rows(allwordcounts,doc$wordcounts);
+        }
     });
 
     return(structure(list(
@@ -87,7 +99,8 @@ corpus<-function(filepath)
         averageletters=totalletters/totalwords,
         totalwords=totalwords,
         averagewords=totalwords/length(textfiles),
-        longestword=longestword
+        longestword=longestword,
+        allwordcounts=allwordcounts
     ),class="corpus"));
 }
 
@@ -99,6 +112,7 @@ summary.corpus<-function(corpse)
     cat(sprintf("min words in a document: %s\n",corpse$minwords));
     cat(sprintf("average letters per word: %s\n",corpse$averageletters));
     cat(sprintf("longest word in corpus: %s\n",corpse$longestword));
+    print(corpse$allwordcounts);
 }
 
 # doc<-document("data/les_mis.txt");
