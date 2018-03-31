@@ -81,8 +81,6 @@ corpus<-function(filepath)
         }
     });
 
-    print(longestword);
-
     return(structure(list(
         minwords=minwords,
         maxwords=maxwords,
@@ -93,9 +91,20 @@ corpus<-function(filepath)
     ),class="corpus"));
 }
 
+summary.corpus<-function(corpse)
+{
+    cat(sprintf("corpus total words: %s\n",corpse$totalwords));
+    cat(sprintf("average words per document: %s\n",corpse$averagewords));
+    cat(sprintf("max words in a document: %s\n",corpse$maxwords));
+    cat(sprintf("min words in a document: %s\n",corpse$minwords));
+    cat(sprintf("average letters per word: %s\n",corpse$averageletters));
+    cat(sprintf("longest word in corpus: %s\n",corpse$longestword));
+}
+
 # doc<-document("data/les_mis.txt");
 # summary(doc);
 # most_common(doc,10);
 # preview(doc);
 
 corp<-corpus("data/testdata");
+summary(corp);
