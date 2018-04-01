@@ -1,7 +1,7 @@
 library(readr,warn.conflicts=FALSE);
 library(plyr,warn.conflicts=FALSE);
 library(dplyr,warn.conflicts=FALSE);
-options(width=2000);
+options(width=100);
 
 document<-function(filename)
 {
@@ -22,13 +22,19 @@ document<-function(filename)
 
     rownames(wordcounts)<-NULL;
 
+    previewlength<-50;
+    if (length(text)<50)
+    {
+        previewlength<-length(text);
+    }
+
     return(structure(list(
         wordcounts=wordcounts[c("word","count")],
         longestword=toString(filter(wordcounts,wordsize==maxwordsize)[1,][["word"]]), #the longest word
         averageletters=lettercount/totalwords, #average letters per word
         totalwords=totalwords,
         lettercount=lettercount,
-        previewwords=text[1:50]
+        previewwords=text[1:previewlength]
     ),class="document"));
 }
 
@@ -62,8 +68,12 @@ corpus<-function(filepath)
     totalwords<-0;
     totalletters<-0;
     longestwordSize<-0;
-    allwordunset=FALSE;
+
+    allwordset<-FALSE;
     allwordcounts<-NULL;
+
+    allpreviewset<-FALSE;
+    allpreview<-NULL;
 
     lapply(docs,function(doc){
         totalwords<<-totalwords+doc$totalwords;
@@ -83,12 +93,20 @@ corpus<-function(filepath)
             longestword<<-doc$longestword;
         }
 
-        if (!allwordunset)
+        if (!allwordset)
         {
-            allwordunset<<-TRUE;
+            allwordset<<-TRUE;
             allwordcounts<<-doc$wordcounts;
         } else {
             allwordcounts<<-ddply(rbind(allwordcounts,doc$wordcounts),"word",numcolwise(sum));
+        }
+
+        if (!allpreviewset)
+        {
+            allpreviewset<<-TRUE;
+            allpreview<<-doc$previewwords;
+        } else {
+            allpreview<<-append(allpreview,doc$previewwords);
         }
     });
 
@@ -102,10 +120,12 @@ corpus<-function(filepath)
         totalwords=totalwords,
         averagewords=totalwords/length(textfiles),
         longestword=longestword,
-        allwordcounts=allwordcounts
+        allwordcounts=allwordcounts,
+        allpreview=allpreview
     ),class="corpus"));
 }
 
+summary<-function(corpse){UseMethod("summary")}
 summary.corpus<-function(corpse)
 {
     cat(sprintf("corpus total words: %s\n",corpse$totalwords));
@@ -114,13 +134,26 @@ summary.corpus<-function(corpse)
     cat(sprintf("min words in a document: %s\n",corpse$minwords));
     cat(sprintf("average letters per word: %s\n",corpse$averageletters));
     cat(sprintf("longest word in corpus: %s\n",corpse$longestword));
-    print(corpse$allwordcounts[1:20,]);
 }
 
-doc<-document("data/testdata/sherlocks_adventures.txt");
-summary(doc);
-most_common(doc,10);
-preview(doc);
+most_common<-function(corp,rows){UseMethod("most_common")}
+most_common.corpus<-function(corp,rows=10)
+{
+    return(corp$allwordcounts[1:rows,]);
+}
 
-# corp<-corpus("data/testdata");
-# summary(corp);
+preview<-function(corp){UseMethod("preview")}
+preview.corpus<-function(corp)
+{
+    return(corp$allpreview);
+}
+
+# doc<-document("data/testdata/hey2.txt");
+# summary(doc);
+# most_common(doc,20);
+# preview(doc);
+
+corp<-corpus("data/testdata");
+summary(corp);
+most_common(corp,20);
+preview(corp);

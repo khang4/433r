@@ -1,15 +1,99 @@
-word count: 1
-average letters per word: 1
-longest word: ?
-     word count
-1       ?     1
-NA   <NA>    NA
-NA.1 <NA>    NA
-NA.2 <NA>    NA
-NA.3 <NA>    NA
-NA.4 <NA>    NA
-NA.5 <NA>    NA
-NA.6 <NA>    NA
-NA.7 <NA>    NA
-NA.8 <NA>    NA
- [1] "?" NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA 
+corpus total words: 273
+average words per document: 91
+max words in a document: 251
+min words in a document: 7
+average letters per word: 5.13186813186813
+longest word in corpus: nosnesne???????????????????????????????????????????
+      word count
+1      the    24
+2      and    14
+3        a     9
+4       in     9
+5       of     9
+6       to     7
+7      was     6
+8      for     4
+9       at     3
+10     her     3
+11     new     3
+12 service     3
+13      aa     2
+14   hello     2
+15    this     2
+16    1941     2
+17 actions     2
+18 against     2
+19   final     2
+20     Her     2
+ [1] "hello"                                              
+ [2] "there"                                              
+ [3] "how"                                                
+ [4] "are"                                                
+ [5] "you."                                               
+ [6] "aa"                                                 
+ [7] "this"                                               
+ [8] "whats"                                              
+ [9] "this"                                               
+[10] "nosnesne???????????????????????????????????????????"
+[11] "ho"                                                 
+[12] "w"                                                  
+[13] "a"                                                  
+[14] "a"                                                  
+[15] "a"                                                  
+[16] "aaaa"                                               
+[17] "a"                                                  
+[18] "a"                                                  
+[19] "a"                                                  
+[20] "a"                                                  
+[21] "hello"                                              
+[22] "aa"                                                 
+[23] "HMS"                                                
+[24] "Victorious,"                                        
+[25] "ordered"                                            
+[26] "under"                                              
+[27] "the"                                                
+[28] "1936"                                               
+[29] "Naval"                                              
+[30] "Programme,"                                         
+[31] "was"                                                
+[32] "the"                                                
+[33] "third"                                              
+[34] "Illustrious-class"                                  
+[35] "aircraft"                                           
+[36] "carrier"                                            
+[37] "after"                                              
+[38] "Illustrious"                                        
+[39] "and"                                                
+[40] "Formidable."                                        
+[41] "She"                                                
+[42] "was"                                                
+[43] "laid"                                               
+[44] "down"                                               
+[45] "at"                                                 
+[46] "the"                                                
+[47] "Vickers-Armstrong"                                  
+[48] "shipyard"                                           
+[49] "at"                                                 
+[50] "Newcastle-Upon-Tyne"                                
+[51] "in"                                                 
+[52] "1937"                                               
+[53] "and"                                                
+[54] "launched"                                           
+[55] "two"                                                
+[56] "years"                                              
+[57] "later"                                              
+[58] "in"                                                 
+[59] "1939."                                              
+[60] "Her"                                                
+[61] "commissioning"                                      
+[62] "was"                                                
+[63] "delayed"                                            
+[64] "until"                                              
+[65] "1941"                                               
+[66] "due"                                                
+[67] "to"                                                 
+[68] "the"                                                
+[69] "greater"                                            
+[70] "need"                                               
+[71] "for"                                                
+[72] "escort"                                             
