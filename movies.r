@@ -39,8 +39,8 @@ glowworms<-function(alldata)
 
     # print(rdata);
 
-    ggplot(data=rdata,aes(x=code,y=budget_2013.,color=binary))+geom_smooth();
-    ggsave("graph5.png");
+    ggplot(data=rdata,aes(x=code,y=budget_2013.,color=binary,fill=binary))+geom_smooth()+labs(y="average budget ($)",x="year",title="average budget and number of movies released per year",colour="movie status",fill="nope")+theme(panel.background=element_rect(fill="white",colour="white"),panel.grid.major.y=element_line(colour="#26272a",size=.08),axis.line.x=element_line(colour="black"),axis.ticks=element_blank(),panel.grid.major.x=element_blank(),plot.title=element_text(hjust=.5))+scale_colour_manual(values=c("#928b63","#504c70"))+scale_fill_manual(values=c("#928b63","#504c70"),guide="none")+scale_y_continuous(breaks=seq(0,80000000,20000000),labels=comma);
+    ggsave("graph3.png");
 }
 
 scattuh<-function(alldata)
@@ -59,4 +59,5 @@ alldata<-read.csv(file="data/movies.csv",header=TRUE);
 
 # bars(alldata);
 # violin(alldata);
-scattuh(alldata);
+glowworms(alldata);
+# scattuh(alldata);
