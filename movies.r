@@ -25,7 +25,7 @@ violin<-function(alldata)
 
     # print(relevantdata);
 
-    ggplot(data=relevantdata,aes(binary,code))+geom_violin();
+    ggplot(data=relevantdata,aes(binary,code))+geom_violin(color="#f5b0be",fill="#f5b0be")+labs(y="year",x="pass or fail",title="movies that passed or failed vs time")+theme(panel.background=element_rect(fill="white",colour="white"),panel.grid.major.y=element_line(colour="#26272a",size=.08),axis.line.x=element_line(colour="black"),axis.ticks=element_blank(),panel.grid.major.x=element_blank());
     ggsave("graph2.png");
 }
 
@@ -56,4 +56,5 @@ scattuh<-function(alldata)
 
 alldata<-read.csv(file="data/movies.csv",header=TRUE);
 
-scattuh(alldata);
+# violin(alldata);
+# scattuh(alldata);
