@@ -1,5 +1,6 @@
 library(dplyr,warn.conflicts=FALSE);
 library(ggplot2,warn.conflicts=FALSE);
+library(scales,warn.conflicts=FALSE);
 options(width=2000);
 pdf(NULL);
 
@@ -25,7 +26,7 @@ violin<-function(alldata)
 
     # print(relevantdata);
 
-    ggplot(data=relevantdata,aes(binary,code))+geom_violin(color="#f5b0be",fill=c("#f5b0be")+labs(y="year",x="pass or fail",title="movies that passed or failed vs time")+theme(panel.background=element_rect(fill="white",colour="white"),panel.grid.major.y=element_line(colour="#26272a",size=.08),axis.line.x=element_line(colour="black"),axis.ticks=element_blank(),panel.grid.major.x=element_blank(),plot.title=element_text(hjust=.5));
+    ggplot(data=relevantdata,aes(binary,code))+geom_violin(color="#f5b0be",fill="#f5b0be")+labs(y="year",x="pass or fail",title="movies that passed or failed vs time")+theme(panel.background=element_rect(fill="white",colour="white"),panel.grid.major.y=element_line(colour="#26272a",size=.08),axis.line.x=element_line(colour="black"),axis.ticks=element_blank(),panel.grid.major.x=element_blank(),plot.title=element_text(hjust=.5));
     ggsave("graph2.png");
 }
 
@@ -50,12 +51,12 @@ scattuh<-function(alldata)
     # print(rdata);
     # print(alldata);
 
-    ggplot(data=rdata,aes(x=budget_2013.,y=domgross_2013.,colour=clean_test))+geom_point();
+    ggplot(data=rdata,aes(x=budget_2013.,y=domgross_2013.,colour=clean_test))+geom_point()+labs(y="gross ($)",x="budget ($)",title="movies budget vs domestic gross and their statuses",colour="movie status")+theme(panel.background=element_rect(fill="white",colour="white"),panel.grid.major.y=element_line(colour="#26272a",size=.08),axis.line.x=element_line(colour="black"),axis.ticks=element_blank(),panel.grid.major.x=element_blank(),plot.title=element_text(hjust=.5))+scale_y_continuous(breaks=seq(0,1800000000,187500000),labels=comma)+scale_x_continuous(breaks=seq(0,400000000,100000000),labels=comma)+scale_colour_manual(values=c("#928b63","#504c70","#798d96","#ad685e","#ce44a5"));
     ggsave("graph4.png");
 }
 
 alldata<-read.csv(file="data/movies.csv",header=TRUE);
 
-bars(alldata);
+# bars(alldata);
 # violin(alldata);
-# scattuh(alldata);
+scattuh(alldata);
