@@ -10,7 +10,7 @@ bars<-function(alldata)
     # relevantdata<-relevantdata[2,];
     # print(relevantdata);
 
-    ggplot(data=relevantdata,aes(x=clean_test,y=n))+geom_bar(stat="identity");
+    ggplot(data=relevantdata,aes(x=clean_test,y=n,fill=c("#332d44","#854d81","#506684","#7083a4","#397694"),width=1))+geom_bar(stat="identity")+labs(y="amount of movies",x="status",title="amounts of movies with certain statuses")+theme(panel.background=element_rect(fill="white",colour="white"),panel.grid.major.y=element_line(colour="#26272a",size=.08),axis.line.x=element_line(colour="black"),axis.ticks=element_blank(),panel.grid.major.x=element_blank(),plot.title=element_text(hjust=.5))+scale_fill_manual(guide=FALSE,values=c("#332d44","#854d81","#506684","#7083a4","#397694"));
     ggsave("graph1.png");
 }
 
@@ -25,7 +25,7 @@ violin<-function(alldata)
 
     # print(relevantdata);
 
-    ggplot(data=relevantdata,aes(binary,code))+geom_violin(color="#f5b0be",fill="#f5b0be")+labs(y="year",x="pass or fail",title="movies that passed or failed vs time")+theme(panel.background=element_rect(fill="white",colour="white"),panel.grid.major.y=element_line(colour="#26272a",size=.08),axis.line.x=element_line(colour="black"),axis.ticks=element_blank(),panel.grid.major.x=element_blank());
+    ggplot(data=relevantdata,aes(binary,code))+geom_violin(color="#f5b0be",fill=c("#f5b0be")+labs(y="year",x="pass or fail",title="movies that passed or failed vs time")+theme(panel.background=element_rect(fill="white",colour="white"),panel.grid.major.y=element_line(colour="#26272a",size=.08),axis.line.x=element_line(colour="black"),axis.ticks=element_blank(),panel.grid.major.x=element_blank(),plot.title=element_text(hjust=.5));
     ggsave("graph2.png");
 }
 
@@ -56,5 +56,6 @@ scattuh<-function(alldata)
 
 alldata<-read.csv(file="data/movies.csv",header=TRUE);
 
+bars(alldata);
 # violin(alldata);
 # scattuh(alldata);
