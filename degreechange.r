@@ -44,6 +44,18 @@ filterData<-function(datafile,searchSchool,bachelorRowName)
 
 degreeChange<-function(file1,file2,searchSchool)
 {
+    if (!file.exists(file1))
+    {
+        cat(sprintf("file %s does not seem to be accessible\n",file1));
+        return(NULL);
+    }
+
+    if (!file.exists(file2))
+    {
+        cat(sprintf("file %s does not seem to be accessible\n",file2));
+        return(NULL);
+    }
+
     searchSchoolData<-filterData(file1,searchSchool,"bachelors");
     searchSchoolData2<-filterData(file2,searchSchool,"bachelors2");
 
@@ -54,3 +66,5 @@ degreeChange<-function(file1,file2,searchSchool)
     colnames(searchSchoolData3)<-c("","Bachelors");
     return(searchSchoolData3);
 }
+
+degreeChange("data/USM1986","data/USM2017","University of Maryland, College Park");

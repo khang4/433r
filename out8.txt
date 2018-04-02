@@ -1,0 +1,24 @@
+                            Bachelors
+1   Agric. & Nat. Resources      -120
+2     Arch. & Envtl. Design       -33
+3              Area Studies       -23
+4       Biological Sciences      -426
+5     Business & Management       108
+6            Communications       -44
+7     Computer & Info. Sci.      -215
+8                 Education      -202
+9               Engineering      -252
+10      Fine & Applied Arts       -81
+11        Foreign Languages       -59
+12       Health Professions      -199
+13           Home Economics       128
+14 Interdisc. & CC Transfer       325
+15                      Law         0
+16                  Letters       -29
+17          Library Science         0
+18              Mathematics       -76
+19         Physical Science       -56
+20               Psychology      -102
+21   Public Affairs & Serv.       145
+22          Social Sciences      -631
+23                    Total     -1842
