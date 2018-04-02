@@ -5,7 +5,7 @@ options(width=100);
 
 document<-function(filename)
 {
-    text<-scan(filename,character(),quote=NULL,fileEncoding="UTF-8");
+    invisible(text<-scan(filename,character(),quote=NULL,fileEncoding="UTF-8",quiet=TRUE));
     # invisible(text<-strsplit(read_file(filename),"\\s",perl=TRUE)[[1]]);
 
     wordcounts<-table(unlist(text));
