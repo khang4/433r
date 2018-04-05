@@ -1,5 +1,5 @@
 library(dplyr,warn.conflicts=FALSE);
-options(width=2000);
+# options(width=2000);
 
 filterData<-function(datafile,searchSchool,bachelorRowName)
 {
@@ -67,4 +67,4 @@ degreeChange<-function(file1,file2,searchSchool)
     return(searchSchoolData3);
 }
 
-degreeChange("data/USM1986","data/USM2017","University of Maryland, College Park");
+# degreeChange("data/USM1986","data/USM2017","University of Maryland, College Park");

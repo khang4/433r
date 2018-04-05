@@ -1,7 +1,7 @@
 library(dplyr,warn.conflicts=FALSE);
 library(ggplot2,warn.conflicts=FALSE);
 library(scales,warn.conflicts=FALSE);
-options(width=2000);
+# options(width=2000);
 pdf(NULL);
 
 bars<-function(alldata)
@@ -70,5 +70,3 @@ makePlots<-function()
     glowworms(alldata);
     scattuh(alldata);
 }
-
-makePlots();

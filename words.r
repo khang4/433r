@@ -1,7 +1,7 @@
 library(readr,warn.conflicts=FALSE);
 library(plyr,warn.conflicts=FALSE);
 library(dplyr,warn.conflicts=FALSE);
-options(width=100);
+# options(width=100);
 
 document<-function(filename)
 {
@@ -153,7 +153,7 @@ preview.corpus<-function(corp)
 # most_common(doc,20);
 # preview(doc);
 
-corp<-corpus("data/testdata");
-summary(corp);
-most_common(corp,20);
-preview(corp);
+# corp<-corpus("data/testdata");
+# summary(corp);
+# most_common(corp,20);
+# preview(corp);
